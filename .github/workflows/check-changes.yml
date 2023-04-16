@@ -1,0 +1,13 @@
+name: Tests & Code Coverage
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install npm dependencies
+        run: |
+          npm install
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+
